@@ -5,11 +5,8 @@ export default function TodoItems({ item }) {
   function OnHandleBtn(item, e) {
     const newItem = [...active, item]
     setActiveState(() => newItem)
-
-
-
   }
-
+  console.log("child component");
   return (
     <div>
       {
