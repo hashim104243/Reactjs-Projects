@@ -1,0 +1,29 @@
+.Parent-Box {
+
+  display: flex;
+
+}
+
+.Right-box {
+  width: 100%;
+}
+
+.sidebar {
+  min-height: 700px;
+}
+
+.reaction {
+  width: 100%;
+  margin: 9px 0px 0px 0px;
+}
+
+.post-card {
+  margin: 40px 25px
+}
+
+.create-Post {
+  margin-top: 39px;
+  margin-left: 52px;
+  width: 80%;
+
+}

@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createContext, useReducer } from "react";
 
 
@@ -17,15 +17,35 @@ function reducer(currentPostList, action) {
   return item;
 }
 export const PostListContext = createContext({
-  postListItem: [],
+  postItem: [],
   addPost: () => { },
   deletePost: () => { },
-  getPost: () => { }
+
 
 
 });
 
 function PostContext({ children }) {
+  // const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   const controller = new AbortController();
+  //   const signal = controller.signal;
+  //   setLoading(!loading)
+  //   fetch('https://dummyjson.com/posts', { signal })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       getPost(data.posts);
+  //       setLoading(false);
+  //     }
+
+
+  //     );
+  //   return () => {
+  //     controller.abort();
+
+  //   }
+
+  // }, [])
   // const postListItem = [
   //   {
   //     id: 1,
@@ -45,17 +65,12 @@ function PostContext({ children }) {
   // ]
   const [postItem, DispatchPostvalues] = useReducer(reducer, []);
 
-  function addPost(userId, utitle, postContent, userreaction, userTag) {
-    console.log(userId + " " + utitle + " " + postContent + " " + userreaction + " " + userTag);
+  function addPost(post) {
+    console.log(post);
+    console.log("when click on add post btn then values is ", post);
     DispatchPostvalues({
       type: "Add_Post",
-      payload: {
-        id: Date.now(),
-        title: utitle,
-        Body: postContent,
-        reaction: userreaction,
-        tags: userTag
-      }
+      payload: post
 
     })
   }
@@ -80,12 +95,13 @@ function PostContext({ children }) {
     }
     DispatchPostvalues(getPosts)
   }
+
   return (
     <PostListContext.Provider value={{
       postItem: postItem,
       deletePost: deletePost,
       addPost: addPost,
-      getPost: getPost
+
     }} >
 
       {children}
