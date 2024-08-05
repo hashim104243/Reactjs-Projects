@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.main {
+  margin-right: 400px;
+  background-image: url("reactjs-icon 2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: right;
+}
+
+.list {
+  font-size: larger;
+}
+
+.list>li {
+  padding: 10px
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 100px;
+
+}
