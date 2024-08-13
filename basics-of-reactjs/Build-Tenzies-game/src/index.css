@@ -1,0 +1,40 @@
+.item {
+
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: white;
+
+}
+
+/* tenzies */
+
+
+.items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
+  gap: 8px;
+
+}
+
+.rol-btns {
+  text-align: "center";
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 6px;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.green {
+  background-color: "green";
+}
